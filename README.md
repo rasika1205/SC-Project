@@ -1,4 +1,4 @@
-# Hybrid LSTM-ANFIS-PSO Framework for Hourly Parking Availability Forecasting and Price-Aware Block Recommendation
+<img width="490" height="314" alt="image" src="https://github.com/user-attachments/assets/9abe231c-0a75-4e55-a905-01ae69a0f171" /># Hybrid LSTM-ANFIS-PSO Framework for Hourly Parking Availability Forecasting and Price-Aware Block Recommendation
 
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-ANFIS-red)
@@ -216,20 +216,12 @@ A **cluster bootstrap** (resampling target timestamps, 1,000 replicates) gives e
 - MAE reduced by 14.12% and RMSE by 10.77%.
 - Cluster-bootstrap 95% intervals: MAE reduction 1.49 pp (1.33-1.68), RMSE reduction 1.51 pp (1.26-1.77), R² increase 0.0665 (0.0568-0.0769). None includes zero. Treat as exploratory because nearby timestamps may be dependent.
 
-<p align="center">
-  <img src="assets/figures/fig1_forecast_error.png" width="520" alt="MAE and RMSE for raw LSTM and LSTM plus ANFIS"/><br/>
-  <em>Figure 1. MAE and RMSE before and after ANFIS calibration.</em>
-</p>
+<img width="562" height="393" alt="image" src="https://github.com/user-attachments/assets/e0ca4619-09ca-4233-80d6-e0630731e665" />
 
-<p align="center">
-  <img src="assets/figures/fig2_predicted_vs_observed.png" width="760" alt="Predicted versus observed availability"/><br/>
-  <em>Figure 2. Predicted vs observed availability: (a) raw LSTM, (b) LSTM + ANFIS. The calibrated forecasts lie closer to the diagonal.</em>
-</p>
+<img width="565" height="393" alt="image" src="https://github.com/user-attachments/assets/55be4b9a-f1e5-4807-82fb-f3a33b120440" />
 
-<p align="center">
-  <img src="assets/figures/fig3_error_distribution.png" width="520" alt="Distribution of absolute errors"/><br/>
-  <em>Figure 3. Absolute-error distributions. The whole distribution shifts down after calibration.</em>
-</p>
+<img width="521" height="407" alt="image" src="https://github.com/user-attachments/assets/c44ce2c9-5627-404b-b523-f50acd1e4770" />
+
 
 ### Recommendation (same 123 timestamps)
 
@@ -243,15 +235,10 @@ A **cluster bootstrap** (resampling target timestamps, 1,000 replicates) gives e
 - PSO selects blocks that are about 13.5% cheaper than ANFIS-only selection (rate 1.967 vs 2.274) at about 0.9 points lower availability (75.79% vs 76.67%).
 - The PSO policy is a price-availability trade-off, not a large improvement in overall cost.
 
-<p align="center">
-  <img src="assets/figures/fig4_decision_outcomes.png" width="720" alt="Availability and rate of selected blocks"/><br/>
-  <em>Figure 4. Availability and mean rate of the blocks selected by each policy.</em>
-</p>
+<img width="521" height="320" alt="image" src="https://github.com/user-attachments/assets/a31b4b79-fee7-4015-838e-95be6ae4a55c" />
 
-<p align="center">
-  <img src="assets/figures/fig5_cost_regret.png" width="720" alt="Decision cost and regret"/><br/>
-  <em>Figure 5. Mean decision cost and mean regret (lower is better).</em>
-</p>
+<img width="509" height="354" alt="image" src="https://github.com/user-attachments/assets/b341ffdc-9483-4130-8435-4a719fb30750" />
+
 
 ### Learned PSO weights
 
@@ -261,10 +248,7 @@ A **cluster bootstrap** (resampling target timestamps, 1,000 replicates) gives e
 | Reliability (inverse normalised uncertainty) | about 0 (9e-10) |
 | Affordability (inverse normalised rate) | 0.128368 |
 
-<p align="center">
-  <img src="assets/figures/fig6_pso_weights.png" width="560" alt="Optimised PSO weights"/><br/>
-  <em>Figure 6. Weights learned by PSO.</em>
-</p>
+<img width="490" height="314" alt="image" src="https://github.com/user-attachments/assets/017d0ed1-7180-4636-9d0e-f3a655ab6409" />
 
 **Reading the weights.** With the reliability weight at about zero, ranking by the suitability score is equivalent to ranking by $\hat A - (w_P/w_A)\,\tilde r$. The learned ratio $w_P/w_A = 0.147$ is close to the cost coefficient $\lambda = 0.15$: PSO essentially recovers the price-availability exchange rate built into the cost. Because the cost is linear in actual availability, uncertainty has no role in it beyond improving the estimate of expected availability. The data therefore do **not** show that the uncertainty term improves recommendations. (Uncertainty is still an ANFIS input, so it may help indirectly; this was not tested separately.)
 

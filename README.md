@@ -414,8 +414,8 @@ If you use this code, please cite (update once published):
 
 Netaji Subhas University of Technology (NSUT), Delhi, CSE Department
 
-- Pulkit Gupta
 - Rasika Gautam
+- Pulkit Gupta
 - Ryan Singh Neotne
 - Khushi Jindal
 

@@ -1,4 +1,4 @@
-<img width="490" height="314" alt="image" src="https://github.com/user-attachments/assets/9abe231c-0a75-4e55-a905-01ae69a0f171" /># Hybrid LSTM-ANFIS-PSO Framework for Hourly Parking Availability Forecasting and Price-Aware Block Recommendation
+# Hybrid LSTM-ANFIS-PSO Framework for Hourly Parking Availability Forecasting and Price-Aware Block Recommendation
 
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-ANFIS-red)
